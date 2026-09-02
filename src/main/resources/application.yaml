@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: cuentasBancarias
+  datasource:
+    url: ${JDBC_URL:jdbc:mysql://localhost:3306/bankdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${JDBC_USER:root}
+    password: ${JDBC_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+    show-sql: true
+  jackson:
+    time-zone: America/Bogota
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+server:
+  port: 8080
