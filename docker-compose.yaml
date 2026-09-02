@@ -1,0 +1,32 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: bankdb
+      MYSQL_USER: bankuser
+      MYSQL_PASSWORD: bankpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    image: bank-service:local
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - JDBC_URL=jdbc:mysql://mysql:3306/bankdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - JDBC_USER=bankuser
+      - JDBC_PASSWORD=bankpass
+    ports:
+      - "8080:8080"
+volumes:
+  mysql-data:
