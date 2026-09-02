@@ -5,8 +5,6 @@ import com.cuentas_bancarias.application.ports.input.ConsultaSaldoUseCase;
 import com.cuentas_bancarias.application.ports.input.CrearCuentaUseCase;
 import com.cuentas_bancarias.application.ports.input.DepositoUseCase;
 import com.cuentas_bancarias.application.ports.input.RetiroUseCase;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/accounts")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class CuentaController {
 
     private final CrearCuentaUseCase crearCuentaUseCase;

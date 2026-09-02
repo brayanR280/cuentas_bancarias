@@ -85,7 +85,7 @@ class CuentaServiceTest {
 
         // Assert
         assertNotNull(response);
-        assertEquals(1L, response.getNumeroCuenta());
+        assertEquals(1L, response.getCuentaId());
         assertEquals("Pedro López", response.getTitular());
         assertEquals(new BigDecimal("1000"), response.getSaldo());
         verify(cuentaRepositoryPort, times(1)).findById(1L);
@@ -119,8 +119,7 @@ class CuentaServiceTest {
 
         // Assert
         assertNotNull(response);
-        assertEquals(1L, response.getId());
-        assertEquals(1L, response.getNumeroCuenta());
+        assertEquals(1L, response.getCuentaId());
         assertEquals(TipoTransferencia.DEPOSITO, response.getTipo());
         assertEquals(new BigDecimal("1500.00"), response.getNuevoSaldo());
         verify(cuentaRepositoryPort, times(1)).findById(1L);
@@ -156,8 +155,7 @@ class CuentaServiceTest {
 
         // Assert
         assertNotNull(response);
-        assertEquals(2L, response.getId());
-        assertEquals(1L, response.getNumeroCuenta());
+        assertEquals(1L, response.getCuentaId());
         assertEquals(TipoTransferencia.RETIRO, response.getTipo());
         assertEquals(new BigDecimal("500.00"), response.getNuevoSaldo());
         verify(cuentaRepositoryPort, times(1)).findById(1L);

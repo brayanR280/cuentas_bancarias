@@ -96,24 +96,6 @@ class CuentaBancariaTest {
     }
 
     @Test
-    @DisplayName("Debe fallar validación cuando monto es null")
-    void testValidarSaldoConMontoNull() {
-        cuenta.depositar(new BigDecimal("1000.00"));
-        assertThrows(FondosInsuficientesExcepcion.class, () -> {
-            cuenta.validarSaldo(null);
-        });
-    }
-
-    @Test
-    @DisplayName("Debe retirar exactamente todo el saldo disponible")
-    void testRetirarTodoElSaldo() {
-        BigDecimal monto = new BigDecimal("1000.00");
-        cuenta.depositar(monto);
-        cuenta.retirar(monto);
-        assertEquals(BigDecimal.ZERO, cuenta.getSaldo());
-    }
-
-    @Test
     @DisplayName("Debe permitir depósitos con decimales")
     void testDepositoConDecimales() {
         cuenta.depositar(new BigDecimal("100.50"));

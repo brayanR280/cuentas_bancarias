@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/saldo/static/css/main.9fffb354.css",
+    "main.js": "/saldo/static/js/main.b1ad57fb.js",
+    "static/js/453.f84e3387.chunk.js": "/saldo/static/js/453.f84e3387.chunk.js",
+    "index.html": "/saldo/index.html",
+    "main.9fffb354.css.map": "/saldo/static/css/main.9fffb354.css.map",
+    "main.b1ad57fb.js.map": "/saldo/static/js/main.b1ad57fb.js.map",
+    "453.f84e3387.chunk.js.map": "/saldo/static/js/453.f84e3387.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9fffb354.css",
+    "static/js/main.b1ad57fb.js"
+  ]
+}
