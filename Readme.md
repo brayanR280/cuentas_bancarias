@@ -16,7 +16,7 @@ Se presentan diferentes opciones para la ejecución del microservicio. A continu
 3. Abrir una terminal en la raíz del proyecto.
 4. Ejecutar el siguiente comando para construir y levantar los contenedores:
 ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 5. La aplicación estará disponible en http://localhost:8080.
 6. Para detener los contenedores, presione `Ctrl + C` en la terminal
